@@ -11,10 +11,12 @@ set hidden
 set clipboard+=unnamedplus
 
 filetype plugin indent on
-colorscheme sublimemonokai
 if has("syntax")
 	syntax on
 endif
+
+colorscheme sublimemonokai
+set t_Co=256
 
 let g:rustfmt_autosave=1
 let g:syntastic_always_populate_loc_list = 1
