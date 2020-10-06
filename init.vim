@@ -1,11 +1,10 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 Plug 'rust-lang/rust.vim'
 Plug 'ErichDongubler/vim-sublime-monokai'
 Plug 'w0rp/ale'
 Plug 'cohama/lexima.vim'
 Plug 'ervandew/supertab'
 call plug#end()
-
 
 set number
 set hidden
@@ -21,6 +20,8 @@ colorscheme sublimemonokai
 if has("syntax")
 	syntax on
 endif
+
+colorscheme sublimemonokai
 
 let g:rustfmt_autosave=1
 let g:ale_rust_cargo_use_check = 1
