@@ -4,6 +4,7 @@ Plug 'ErichDongubler/vim-sublime-monokai'
 Plug 'w0rp/ale'
 Plug 'cohama/lexima.vim'
 Plug 'ervandew/supertab'
+Plug 'pbrisbin/vim-restore-cursor'
 call plug#end()
 
 set number
