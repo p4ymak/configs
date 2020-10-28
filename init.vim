@@ -5,7 +5,9 @@ Plug 'w0rp/ale'
 Plug 'cohama/lexima.vim'
 Plug 'ervandew/supertab'
 Plug 'pbrisbin/vim-restore-cursor'
+Plug 'tpope/vim-commentary'
 call plug#end()
+
 
 set number
 set hidden
