@@ -2,7 +2,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'rust-lang/rust.vim'
 Plug 'ErichDongubler/vim-sublime-monokai'
 Plug 'w0rp/ale'
-Plug 'cohama/lexima.vim'
 Plug 'ervandew/supertab'
 Plug 'pbrisbin/vim-restore-cursor'
 Plug 'tpope/vim-commentary'
