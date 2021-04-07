@@ -17,13 +17,10 @@ set wildmode=longest:full,full
 
 filetype plugin indent on
 colorscheme sublimemonokai
-"set termguicolors
 
 if has("syntax")
 	syntax on
 endif
-
-colorscheme sublimemonokai
 
 let g:rustfmt_autosave=1
 let g:ale_rust_cargo_use_check = 1
