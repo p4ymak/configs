@@ -27,6 +27,7 @@ colorscheme sublimemonokai
 
 let g:rustfmt_autosave=1
 let g:ale_rust_cargo_use_check = 1
+let g:ale_rust_cargo_use_clippy = 1
 
 :nnoremap <C-b> :Cargo run<CR>
 :nnoremap <C-f> :! wtf 
