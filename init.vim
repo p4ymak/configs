@@ -1,7 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'rust-lang/rust.vim'
 Plug 'ErichDongubler/vim-sublime-monokai'
-Plug 'morhetz/gruvbox'
 Plug 'w0rp/ale'
 Plug 'ervandew/supertab'
 Plug 'pbrisbin/vim-restore-cursor'
@@ -19,7 +18,6 @@ set wildmode=longest:full,full
 
 filetype plugin indent on
 colorscheme sublimemonokai
-" colorscheme gruvbox
 
 if has("syntax")
 	syntax on
