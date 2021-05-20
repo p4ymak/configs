@@ -6,7 +6,7 @@ Plug 'w0rp/ale'
 Plug 'ervandew/supertab'
 Plug 'pbrisbin/vim-restore-cursor'
 Plug 'tpope/vim-commentary'
-Plug 'vim-scripts/AutoClose'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 
