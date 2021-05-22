@@ -8,7 +8,6 @@ Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
-
 set number
 set hidden
 set clipboard+=unnamedplus
@@ -23,7 +22,7 @@ if has("syntax")
 	syntax on
 endif
 
-let g:rustfmt_autosave=1
+let g:rustfmt_autosave = 1
 let g:ale_rust_cargo_use_check = 1
 let g:ale_rust_cargo_use_clippy = 1
 
