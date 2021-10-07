@@ -1,4 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'neovim/nvim-lspconfig'
 Plug 'rust-lang/rust.vim'
 Plug 'ErichDongubler/vim-sublime-monokai'
 Plug 'w0rp/ale'
@@ -9,12 +10,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
+set encoding=utf-8
 set number
 set hidden
 set clipboard+=unnamedplus
 set wildmenu
 set wildmode=longest:full,full
-:set colorcolumn=100
+set colorcolumn=100
 
 filetype plugin indent on
 colorscheme sublimemonokai
@@ -27,5 +29,6 @@ let g:rustfmt_autosave = 1
 let g:ale_rust_cargo_use_check = 1
 let g:ale_rust_cargo_use_clippy = 1
 
-:nnoremap <C-x> :Cargo run<CR>
-:nnoremap <C-f> :! wtf 
+nnoremap <C-x> :Cargo run<CR>
+nnoremap <C-f> :! wtf 
+nnoremap ,<space> :nohlsearch<CR>
