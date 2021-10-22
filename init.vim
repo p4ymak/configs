@@ -59,8 +59,12 @@ set wildmode=longest:full,full
 set colorcolumn=100
 
 filetype plugin indent on
-"colorscheme sublimemonokai
+
+let g:sonokai_transparent_background = 1
+let g:sonokai_style = 'andromeda'
+let g:sonokai_diagnostic_virtual_text = 'colored'
 colorscheme sonokai
+
 if has("syntax")
 	syntax on
 endif
