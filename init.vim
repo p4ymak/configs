@@ -1,22 +1,27 @@
 """---- PLUGINS ----"""
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'sainnhe/sonokai'
+
 Plug 'rust-lang/rust.vim'
 Plug 'rust-analyzer/rust-analyzer'
-Plug 'ErichDongubler/vim-sublime-monokai'
 Plug 'dense-analysis/ale'
+
 Plug 'ervandew/supertab'
 Plug 'pbrisbin/vim-restore-cursor'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
+
 Plug 'scrooloose/nerdtree'
 call plug#end()
 
 
 
-
-"""---- REMAP ----"""
+"""---- ALE ----"""
+"set completeopt=menu,menuone,preview,noselect,noinsert
+set completeopt-=preview
 set omnifunc=ale#completion#OmniFunc
+let g:ale_rust_cargo_use_clippy = 1
 let g:ale_completion_enabled = 1
 let g:ale_completion_autoimport = 1
 let g:ale_sign_column_always = 1
@@ -26,6 +31,9 @@ let g:ale_fixers = {
   \   'rust': ['rustfmt'],
   \}
 
+
+
+"""---- REMAP ----"""
 nnoremap <C-x> :Cargo run<CR>
 nnoremap <C-f> :! wtf
 
@@ -51,8 +59,8 @@ set wildmode=longest:full,full
 set colorcolumn=100
 
 filetype plugin indent on
-colorscheme sublimemonokai
-
+"colorscheme sublimemonokai
+colorscheme sonokai
 if has("syntax")
 	syntax on
 endif
