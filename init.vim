@@ -1,6 +1,9 @@
 """---- PLUGINS ----"""
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'sainnhe/sonokai'
+" Plug 'morhetz/gruvbox'
+" Plug 'srcery-colors/srcery-vim'
+" Plug 'ghifarit53/tokyonight-vim'
 
 Plug 'rust-lang/rust.vim'
 Plug 'rust-analyzer/rust-analyzer'
@@ -18,24 +21,37 @@ call plug#end()
 
 
 """---- ALE ----"""
-"set completeopt=menu,menuone,preview,noselect,noinsert
-set completeopt-=preview
-set omnifunc=ale#completion#OmniFunc
+" set completeopt=menu,menuone,noselect,noinsert
+" set omnifunc=ale#completion#OmniFunc
 let g:ale_rust_cargo_use_clippy = 1
 let g:ale_completion_enabled = 1
 let g:ale_completion_autoimport = 1
 let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-  \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-  \   'rust': ['rustfmt'],
+  \   'rust': ['remove_trailing_lines', 'trim_whitespace', 'rustfmt'],
   \}
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
+function! GetCompletions() abort
+	let l:completion_enabled = get(g:, 'ale_completion_enabled', 0)
+	if !l:completion_enabled
+		call ale#completion#Enable()
+	endif
+	call ale#completion#GetCompletions()
+	if !l:completion_enabled
+		call ale#completion#Disable()
+	endif
+endfunction
 
-
+inoremap <silent><tab> <C-\><C-O>:call GetCompletions()<CR>
+"
 """---- REMAP ----"""
+nnoremap j gj
+nnoremap k gk
+
 nnoremap <C-x> :Cargo run<CR>
-nnoremap <C-f> :! wtf
+nnoremap <C-f> :! wtf 
 
 nnoremap ,<space> :nohlsearch<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -43,8 +59,8 @@ nnoremap <C-space> :NERDTreeFocus<CR>
 
 nmap <silent> <C-p> :ALEGoToDefinition<CR>
 nmap <silent> gh :ALEFindReferences<CR>
-nmap <silent> <C-[> <Plug>(ale_previous_wrap)
-nmap <silent> <C-]> <Plug>(ale_next_wrap)
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 
 
@@ -60,11 +76,32 @@ set colorcolumn=100
 
 filetype plugin indent on
 
-let g:sonokai_transparent_background = 1
-let g:sonokai_style = 'andromeda'
-let g:sonokai_diagnostic_virtual_text = 'colored'
-colorscheme sonokai
-
+if has('termguicolors')
+	set termguicolors
+endif
 if has("syntax")
 	syntax on
 endif
+
+let g:sonokai_transparent_background = 1
+let g:sonokai_disable_italic_comment = 1
+let g:sonokai_style = 'default'
+let g:sonokai_diagnostic_virtual_text = 'colored'
+let g:sonokai_diagnostic_text_highlight = 1
+
+
+" let g:srcery_inverse = 0
+" let g:srcery_undercurl = 1
+" let g:srcery_underline = 1
+" let g:srcery_italic = 0
+
+" let g:gruvbox_invert_selection = 0
+" let g:gruvbox_invert_signs = 0
+" let g:gruvbox_underline = 1
+" let g:gruvbox_undercurl = 1
+" let g:gruvbox_contrast_dark = 'medium'
+" let g:gruvbox_italicize_comments = 0
+
+" let g:tokyonight_style = 'night' " available: night, storm
+" let g:tokyonight_enable_italic = 0
+colorscheme sonokai
