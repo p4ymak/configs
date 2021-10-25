@@ -16,6 +16,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 call plug#end()
 
@@ -31,6 +32,7 @@ let g:ale_rust_cargo_use_clippy = 1
 let g:ale_completion_enabled = 0
 let g:ale_completion_autoimport = 1
 let g:ale_sign_column_always = 1
+let g:ale_lint_on_text_changed = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 	\   'rust': ['remove_trailing_lines', 'trim_whitespace', 'rustfmt'],
@@ -40,10 +42,16 @@ let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-x><c-u>'
 
 
+
+
 """---- AIRLINE ----"""
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_enable_fugitive = 1
+let g:airline_enable_fugitive = 0
+let g:airline_theme='bubblegum'
+
+
+
 
 """---- REMAP ----"""
 nnoremap j gj
@@ -57,6 +65,7 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-space> :NERDTreeFocus<CR>
 
 nmap <silent> <C-p> :ALEGoToDefinition<CR>
+nmap <silent> <C-l> :ALEHover<CR>
 nmap <silent> gh :ALEFindReferences<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -64,6 +73,7 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 nnoremap <C-]> :bnext<CR>
 nnoremap <C-[> :bprevious<CR>
 nnoremap <C-\> :bdelete<CR>
+
 
 
 
