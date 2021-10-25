@@ -21,31 +21,29 @@ call plug#end()
 
 
 """---- ALE ----"""
-" set completeopt=menu,menuone,noselect,noinsert
-" set omnifunc=ale#completion#OmniFunc
+set completeopt=menu,menuone,noselect,noinsert
+set omnifunc=ale#completion#OmniFunc
 let g:ale_rust_cargo_use_clippy = 1
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 let g:ale_completion_autoimport = 1
 let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
   \   'rust': ['remove_trailing_lines', 'trim_whitespace', 'rustfmt'],
   \}
-let g:SuperTabDefaultCompletionType = "<c-n>"
 
-function! GetCompletions() abort
-	let l:completion_enabled = get(g:, 'ale_completion_enabled', 0)
-	if !l:completion_enabled
-		call ale#completion#Enable()
-	endif
-	call ale#completion#GetCompletions()
-	if !l:completion_enabled
-		call ale#completion#Disable()
-	endif
-endfunction
+let g:SuperTabCrMapping = 0
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabContextDefaultCompletionType = '<c-x><c-u>'
+autocmd FileType *
+    \ if &omnifunc != '' |
+    \     call SuperTabChain(&omnifunc, '<c-p>') |
+    \ endif
 
-inoremap <silent><tab> <C-\><C-O>:call GetCompletions()<CR>
-"
+
+
+
+
 """---- REMAP ----"""
 nnoremap j gj
 nnoremap k gk
@@ -83,7 +81,7 @@ if has("syntax")
 	syntax on
 endif
 
-let g:sonokai_transparent_background = 1
+let g:sonokai_transparent_background = 0
 let g:sonokai_disable_italic_comment = 1
 let g:sonokai_style = 'default'
 let g:sonokai_diagnostic_virtual_text = 'colored'
