@@ -15,6 +15,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 call plug#end()
 
@@ -32,22 +33,24 @@ let g:ale_completion_autoimport = 1
 let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-  \   'rust': ['remove_trailing_lines', 'trim_whitespace', 'rustfmt'],
-  \}
-
+	\   'rust': ['remove_trailing_lines', 'trim_whitespace', 'rustfmt'],
+	\}
 let g:SuperTabCrMapping = 0
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-x><c-u>'
 
 
-
+"""---- AIRLINE ----"""
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_enable_fugitive = 1
 
 """---- REMAP ----"""
 nnoremap j gj
 nnoremap k gk
 
 nnoremap <C-x> :Cargo run<CR>
-nnoremap <C-f> :! wtf 
+nnoremap <C-f> :! wtf "WTF must be installed and added to PATH
 
 nnoremap ,<space> :nohlsearch<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -58,6 +61,9 @@ nmap <silent> gh :ALEFindReferences<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+nnoremap <C-]> :bnext<CR>
+nnoremap <C-[> :bprevious<CR>
+nnoremap <C-\> :bdelete<CR>
 
 
 
@@ -69,7 +75,8 @@ set clipboard+=unnamedplus
 set wildmenu
 set wildmode=longest:full,full
 set colorcolumn=100
-set mouse=a
+set t_Co=256
+" set mouse=a
 
 filetype plugin indent on
 
@@ -84,9 +91,7 @@ let g:sonokai_transparent_background = 0
 let g:sonokai_disable_italic_comment = 1
 let g:sonokai_style = 'default'
 let g:sonokai_diagnostic_virtual_text = 'colored'
-let g:sonokai_diagnostic_text_highlight = 1
-
-
+let g:sonokai_diagnostic_text_highlight = 0
 " let g:srcery_inverse = 0
 " let g:srcery_undercurl = 1
 " let g:srcery_underline = 1
