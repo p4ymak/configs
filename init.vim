@@ -20,9 +20,12 @@ call plug#end()
 
 
 
+
 """---- ALE ----"""
 set completeopt=menu,menuone,noselect,noinsert
 set omnifunc=ale#completion#OmniFunc
+set completefunc=ale#completion#OmniFunc
+
 let g:ale_rust_cargo_use_clippy = 1
 let g:ale_completion_enabled = 0
 let g:ale_completion_autoimport = 1
@@ -35,11 +38,6 @@ let g:ale_fixers = {
 let g:SuperTabCrMapping = 0
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-x><c-u>'
-autocmd FileType *
-    \ if &omnifunc != '' |
-    \     call SuperTabChain(&omnifunc, '<c-p>') |
-    \ endif
-
 
 
 
@@ -71,6 +69,7 @@ set clipboard+=unnamedplus
 set wildmenu
 set wildmode=longest:full,full
 set colorcolumn=100
+set mouse=a
 
 filetype plugin indent on
 
