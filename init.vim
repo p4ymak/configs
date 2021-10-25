@@ -50,7 +50,7 @@ nnoremap j gj
 nnoremap k gk
 
 nnoremap <C-x> :Cargo run<CR>
-nnoremap <C-f> :! wtf "WTF must be installed and added to PATH
+nnoremap <C-f> :! wtf 
 
 nnoremap ,<space> :nohlsearch<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
