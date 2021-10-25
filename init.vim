@@ -1,3 +1,5 @@
+set nocompatible
+
 """---- PLUGINS ----"""
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'sainnhe/sonokai'
