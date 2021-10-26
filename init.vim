@@ -37,10 +37,6 @@ let g:ale_sign_column_always = 1
 let g:ale_lint_on_text_changed = 1
 let g:ale_fix_on_save = 1
 
-let g:SuperTabCrMapping = 0
-let g:SuperTabDefaultCompletionType = 'context'
-let g:SuperTabContextDefaultCompletionType = '<c-x><c-u>'
-
 let g:ale_rust_cargo_use_clippy = 1
 let g:ale_fixers = {
 	\   'rust': ['remove_trailing_lines', 'trim_whitespace', 'rustfmt'],
@@ -49,6 +45,11 @@ let g:ale_fixers = {
 	\}
 let g:ale_python_executable='python3'
 let g:ale_python_pylint_use_global=1
+
+
+let g:SuperTabCrMapping = 0
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabContextDefaultCompletionType = '<c-x><c-o>'
 
 
 
@@ -61,6 +62,7 @@ let g:airline_theme='bubblegum'
 let g:airline_symbols_ascii = 1
 let airline#extensions#tabline#ignore_bufadd_pat =
 	\ '\c\vgundo|undotree|vimfiler|tagbar|nerd_tree'
+
 
 
 
@@ -113,6 +115,8 @@ let g:sonokai_disable_italic_comment = 1
 let g:sonokai_style = 'default'
 let g:sonokai_diagnostic_virtual_text = 'colored'
 let g:sonokai_diagnostic_text_highlight = 0
+colorscheme sonokai
+
 " let g:srcery_inverse = 0
 " let g:srcery_undercurl = 1
 " let g:srcery_underline = 1
@@ -127,4 +131,3 @@ let g:sonokai_diagnostic_text_highlight = 0
 
 " let g:tokyonight_style = 'night' " available: night, storm
 " let g:tokyonight_enable_italic = 0
-colorscheme sonokai
