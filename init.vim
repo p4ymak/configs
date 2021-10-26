@@ -59,7 +59,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_enable_fugitive = 0
 let g:airline_theme='bubblegum'
 let g:airline_symbols_ascii = 1
-
+let airline#extensions#tabline#ignore_bufadd_pat =
+	\ '\c\vgundo|undotree|vimfiler|tagbar|nerd_tree'
 
 
 
