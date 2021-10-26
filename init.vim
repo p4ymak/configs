@@ -36,12 +36,19 @@ let g:ale_completion_autoimport = 1
 let g:ale_sign_column_always = 1
 let g:ale_lint_on_text_changed = 1
 let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-	\   'rust': ['remove_trailing_lines', 'trim_whitespace', 'rustfmt'],
-	\}
+
 let g:SuperTabCrMapping = 0
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-x><c-u>'
+
+let g:ale_rust_cargo_use_clippy = 1
+let g:ale_fixers = {
+	\   'rust': ['remove_trailing_lines', 'trim_whitespace', 'rustfmt'],
+	\   'python': ['remove_trailing_lines', 'trim_whitespace', 
+	\              'autopep8', 'autoflake', 'autoimport', 'isort'],
+	\}
+let g:ale_python_executable='python3'
+let g:ale_python_pylint_use_global=1
 
 
 
@@ -52,6 +59,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_enable_fugitive = 0
 let g:airline_theme='bubblegum'
 let g:airline_symbols_ascii = 1
+
 
 
 
