@@ -83,9 +83,9 @@ nmap <silent> gh :ALEFindReferences<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-nnoremap <C-]> :bnext<CR>
-nnoremap <C-[> :bprevious<CR>
-nnoremap <C-\> :bdelete<CR>
+nnoremap <A-]> :bnext<CR>
+nnoremap <A-[> :bprevious<CR>
+nnoremap <A-\> :bdelete<CR>
 
 
 
