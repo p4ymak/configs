@@ -71,6 +71,7 @@ nnoremap j gj
 nnoremap k gk
 
 nnoremap <C-x> :Cargo run<CR>
+nnoremap <C-c> :Cargo clippy<CR>
 nnoremap <C-f> :! wtf 
 
 nnoremap ,<space> :nohlsearch<CR>
@@ -83,8 +84,8 @@ nmap <silent> gh :ALEFindReferences<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-nnoremap <A-]> :bnext<CR>
-nnoremap <A-[> :bprevious<CR>
+nnoremap <C-]> :bnext<CR>
+nnoremap <A-]> :bprevious<CR>
 nnoremap <A-\> :bdelete<CR>
 
 
