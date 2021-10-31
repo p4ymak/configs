@@ -71,6 +71,7 @@ nnoremap j gj
 nnoremap k gk
 
 nnoremap <C-x> :Cargo run<CR>
+nnoremap <C-A-x> :Cargo run --release<CR>
 nnoremap <C-c> :Cargo clippy<CR>
 nnoremap <C-f> :! wtf 
 
