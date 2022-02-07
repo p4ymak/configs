@@ -30,6 +30,7 @@ set completeopt=menu,menuone,noselect,noinsert
 set omnifunc=ale#completion#OmniFunc
 set completefunc=ale#completion#OmniFunc
 
+let g:ale_rust_rustfmt_options = '--edition 2021'
 let g:ale_rust_cargo_use_clippy = 1
 let g:ale_completion_enabled = 0
 let g:ale_completion_autoimport = 1
